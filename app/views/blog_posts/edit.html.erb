@@ -1,0 +1,5 @@
+<div class="w-[600px] mx-auto">
+  <h1 >Edit Post</h1>
+  <%= render partial: "form", locals: {blog_post: @blog_post}%>
+  <%= button_to "Delete", @blog_post, class: "bg-red-300 mt-3 px-2", method: :delete, data: {turbo_confirm: "are you sure?"} %>
+</div>

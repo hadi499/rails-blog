@@ -1,0 +1,29 @@
+<div >
+  <%= form_with model: blog_post do |form| %>
+    <% if form.object.errors.any? %>
+      <div >
+        <% form.object.errors.full_messages.each do |message| %>
+          <div>
+            <%= message %>
+          </div>
+        <% end %>
+      </div>
+    <% end %>
+    <div class="space-y-3">
+      <div class="flex flex-col space-y-2">
+        <%= form.label :title %>
+        <%= form.text_field :title %>
+      </div>
+      <div class="flex flex-col space-y-2">
+        <%= form.label :body%>
+        <%= form.text_area :body %>
+      </div>
+      <div>
+        <%= form.file_field :image %>
+      </div>
+      <div>
+        <%= form.button  class: "bg-blue-300 p-1"%>
+      </div>
+    </div>
+  <% end %>
+</div>

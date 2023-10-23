@@ -1,0 +1,13 @@
+rails new blog
+rails g model BlogPost title:string body:text
+rails db:migrate
+bundle add devise 
+rails g devise:install   
+
+rails g devise User
+bundle add tailwindcss-rails
+
+rails active_storage:install
+rails db:migrate
+gem install foreman
+foreman start -f Procfile.dev
